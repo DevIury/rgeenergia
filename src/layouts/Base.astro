@@ -50,12 +50,24 @@ const currentPath = Astro.url.pathname;
             <div class="logo-text"><span>RGE</span> Energia</div>
         </a>
         <div class="nav-links" id="navLinks">
-            <a href="/" class:list={{ active: currentPath === '/' }}>Inicio</a>
-            <a href="/sobre" class:list={{ active: currentPath === '/sobre' }}>Sobre</a>
-            <a href="/servicos" class:list={{ active: currentPath.startsWith('/servicos') }}>Servicos</a>
-            <a href="/projetos" class:list={{ active: currentPath === '/projetos' }}>Projetos</a>
-            <a href="/blog" class:list={{ active: currentPath.startsWith('/blog') }}>Blog</a>
-            <a href="/contato" class:list={{ active: currentPath === '/contato' }}>Contato</a>
+            <div class="nav-mobile-header">
+                <a href="/" class="logo">
+                    <div class="logo-mark"><i class="fas fa-bolt"></i></div>
+                    <div class="logo-text"><span>RGE</span> Energia</div>
+                </a>
+                <button class="nav-close" id="navClose" aria-label="Fechar menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="nav-mobile-links">
+                <a href="/" class:list={{ active: currentPath === '/' }}>Inicio</a>
+                <a href="/sobre" class:list={{ active: currentPath === '/sobre' }}>Sobre</a>
+                <a href="/servicos" class:list={{ active: currentPath.startsWith('/servicos') }}>Servicos</a>
+                <a href="/projetos" class:list={{ active: currentPath === '/projetos' }}>Projetos</a>
+                <a href="/blog" class:list={{ active: currentPath.startsWith('/blog') }}>Blog</a>
+                <a href="/contato" class:list={{ active: currentPath === '/contato' }}>Contato</a>
+            </nav>
+            <a href="/contato" class="btn btn-green btn-block nav-mobile-cta"><i class="fas fa-phone-alt"></i> Fale Conosco</a>
         </div>
         <a href="/contato" class="btn btn-green nav-cta"><i class="fas fa-phone-alt"></i> Fale Conosco</a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -122,17 +134,20 @@ const currentPath = Astro.url.pathname;
     const nav = document.getElementById('nav');
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
+    const navClose = document.getElementById('navClose');
     window.addEventListener('scroll', () => {
         nav?.classList.toggle('scrolled', window.scrollY > 50);
     });
+    function closeMenu() {
+        hamburger?.classList.remove('active');
+        navLinks?.classList.remove('open');
+    }
     hamburger?.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navLinks?.classList.toggle('open');
     });
-    navLinks?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        hamburger?.classList.remove('active');
-        navLinks?.classList.remove('open');
-    }));
+    navClose?.addEventListener('click', closeMenu);
+    navLinks?.querySelectorAll('nav a').forEach(a => a.addEventListener('click', closeMenu));
     document.querySelectorAll('a[href^="#"]').forEach(a => {
         a.addEventListener('click', e => {
             const href = a.getAttribute('href');
