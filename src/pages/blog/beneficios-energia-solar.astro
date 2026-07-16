@@ -1,0 +1,89 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="7 Benefícios de Ter Energia Solar | Blog RGE Energia" description="Conheça os principais benefícios de instalar um sistema de energia solar fotovoltaica.">
+
+    <section class="page-hero page-hero-sm">
+        <div class="page-hero-bg"><img src="/img/energy-pylons.webp" alt="Benefícios energia solar"><div class="page-hero-overlay"></div></div>
+        <div class="container page-hero-content">
+            <nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span><span>Benefícios Energia Solar</span></nav>
+            <span class="blog-cat-sm">BENEFÍCIOS</span>
+            <h1>7 Benefícios de Ter <span>Energia Solar</span></h1>
+            <div class="blog-meta"><span><i class="fas fa-calendar"></i> 01 Jul 2026</span><span><i class="fas fa-user"></i> RGE Energia</span></div>
+        </div>
+    </section>
+
+    <article class="blog-article">
+        <div class="container blog-article-grid">
+            <div class="blog-content">
+                <h2>1. Economia na conta de luz</h2>
+                <p>O benefício mais imediato e significativo é a redução drasticamente da conta de luz. Com um sistema bem dimensionado, você pode economizar até <strong>95%</strong> do valor que paga hoje.</p>
+
+                <h2>2. Valorização do imóvel</h2>
+                <p>Imóveis com sistema fotovoltaico instalado valorizam até <strong>3,4%</strong> no mercado imobiliário. É um investimento que agrega valor à sua propriedade.</p>
+
+                <h2>3. Energia limpa e renovável</h2>
+                <p>A energia solar é 100% limpa e renovável. Ao optar pelo sol, você está contribuindo diretamente para a redução da emissão de gases poluentes.</p>
+
+                <h2>4. Baixa manutenção</h2>
+                <p>O sistema fotovoltaico exige manutenção mínima. Apenas limpeza ocasional dos painéis e verificação do inversor, que tem garantia de 10-12 anos.</p>
+
+                <h2>5. Garantia de 25 anos</h2>
+                <p>Os painéis solares possuem garantia de performance por 25 anos, garantindo que sua economia será constante por décadas.</p>
+
+                <h2>6. Independence energética</h2>
+                <p>Ao gerar sua própria energia, você fica menos dependente da concessionária e protegido contra reajustes abusivos nas tarifas.</p>
+
+                <h2>7. Retorno do investimento</h2>
+                <p>Com payback de 3-5 anos e vida útil de mais de 25 anos, o investimento em energia solar é extremamente lucrativo a longo prazo.</p>
+
+                <div class="blog-cta">
+                    <h3>Quer aproveitar esses benefícios?</h3>
+                    <p>Fale com um especialista da RGE Energia.</p>
+                    <a href="/contato" class="btn btn-green">SOLICITAR ORÇAMENTO <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <aside class="blog-sidebar">
+                <div class="sidebar-card">
+                    <h3>Artigos Relacionados</h3>
+                    <a href="/blog/como-funciona-energia-solar" class="sidebar-link">Como Funciona a Energia Solar</a>
+                    <a href="/blog/economia-conta-luz" class="sidebar-link">10 Dicas para Economizar na Conta de Luz</a>
+                    <a href="/blog/retorno-investimento-solar" class="sidebar-link">Quanto Tempo para o Sistema Solar se Pagar?</a>
+                </div>
+                <div class="sidebar-card sidebar-cta">
+                    <h3>Precisa de ajuda?</h3>
+                    <p>Fale com nossa equipe e tire suas dúvidas.</p>
+                    <a href="/contato" class="btn btn-green btn-block">FALE CONOSCO</a>
+                </div>
+            </aside>
+        </div>
+    </article>
+
+    <style>
+        .page-hero-sm { padding: 100px 0 40px; }
+        .blog-cat-sm { display: inline-block; padding: 3px 8px; background: rgba(34,197,94,.1); color: var(--green); font-size: .6rem; font-weight: 700; border-radius: var(--radius-full); margin-bottom: 10px; }
+        .blog-meta { display: flex; gap: 16px; margin-top: 8px; }
+        .blog-meta span { font-size: .75rem; color: var(--gray); }
+        .blog-meta i { margin-right: 4px; color: var(--green); }
+        .blog-article { padding: 40px 0 60px; background: var(--black); }
+        .blog-article-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+        .blog-content h2 { font-family: var(--font-display); font-size: 1.2rem; color: var(--white); margin: 24px 0 10px; }
+        .blog-content h2:first-child { margin-top: 0; }
+        .blog-content p { color: var(--gray); line-height: 1.7; margin-bottom: 12px; font-size: .9rem; }
+        .blog-content p strong { color: var(--white); }
+        .blog-cta { background: var(--dark-2); border: 1px solid var(--green); border-radius: var(--radius); padding: 24px; margin-top: 32px; text-align: center; }
+        .blog-cta h3 { color: var(--white); font-size: 1.1rem; margin-bottom: 6px; }
+        .blog-cta p { color: var(--gray); font-size: .85rem; margin-bottom: 14px; }
+        .sidebar-card { background: var(--dark-2); border: 1px solid var(--dark-3); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
+        .sidebar-card h3 { color: var(--white); font-size: .95rem; margin-bottom: 10px; }
+        .sidebar-link { display: block; padding: 8px 0; color: var(--gray-light); font-size: .8rem; text-decoration: none; border-bottom: 1px solid var(--dark-3); }
+        .sidebar-link:last-child { border-bottom: none; }
+        .sidebar-link:hover { color: var(--green); }
+        .sidebar-cta p { color: var(--gray); font-size: .8rem; margin-bottom: 12px; }
+        .btn-block { display: block; width: 100%; text-align: center; }
+        @media(min-width:640px) { .page-hero h1 { font-size: 2.5rem; } }
+        @media(min-width:1024px) { .page-hero-sm { padding: 140px 0 50px; } .page-hero h1 { font-size: 2.5rem; } .blog-article-grid { grid-template-columns: 1fr 300px; gap: 40px; } }
+    </style>
+
+</Base>

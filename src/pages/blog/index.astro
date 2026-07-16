@@ -1,0 +1,137 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Blog RGE Energia | Dicas de Energia Solar" description="Blog com dicas, informações e novidades sobre energia solar, eficiência energética e projetos elétricos.">
+
+    <section class="page-hero">
+        <div class="page-hero-bg"><img src="/img/solar-panels.webp" alt="Blog RGE"><div class="page-hero-overlay"></div></div>
+        <div class="container page-hero-content">
+            <nav class="breadcrumb"><a href="/">Home</a><span>/</span><span>Blog</span></nav>
+            <h1><span>Blog</span> RGE</h1>
+            <p>Dicas e informações para você tomar a melhor decisão</p>
+        </div>
+    </section>
+
+    <section class="blog-grid-section">
+        <div class="container">
+            <div class="blog-grid">
+                <a href="/blog/como-funciona-energia-solar" class="blog-card-featured">
+                    <div class="blog-feat-img"><img src="/img/solar-panels.webp" alt="Como funciona energia solar"></div>
+                    <div class="blog-feat-body">
+                        <span class="blog-cat">EDUCAÇÃO</span>
+                        <h2>Como Funciona a Energia Solar Fotovoltaica?</h2>
+                        <p>Entenda de forma simples como o sistema fotovoltaico converte a luz do sol em energia elétrica para sua casa ou empresa.</p>
+                        <span class="blog-date"><i class="fas fa-calendar"></i> 15 Jul 2026</span>
+                    </div>
+                </a>
+                <a href="/blog/economia-conta-luz" class="blog-card">
+                    <div class="blog-card-img"><img src="/img/proj-urbano.webp" alt="Economia conta de luz"></div>
+                    <div class="blog-card-body">
+                        <span class="blog-cat">ECONOMIA</span>
+                        <h3>10 Dicas para Economizar na Conta de Luz</h3>
+                        <p>Dicas práticas que vão ajudar a reduzir seu consumo de energia todos os meses.</p>
+                        <span class="blog-date"><i class="fas fa-calendar"></i> 10 Jul 2026</span>
+                    </div>
+                </a>
+                <a href="/blog/retorno-investimento-solar" class="blog-card">
+                    <div class="blog-card-img"><img src="/img/proj-comercial.webp" alt="Retorno investimento"></div>
+                    <div class="blog-card-body">
+                        <span class="blog-cat">INVESTIMENTO</span>
+                        <h3>Quanto Tempo para o Sistema Solar se Pagar?</h3>
+                        <p>Entenda o retorno do investimento em energia solar e por que vale a pena.</p>
+                        <span class="blog-date"><i class="fas fa-calendar"></i> 05 Jul 2026</span>
+                    </div>
+                </a>
+                <a href="/blog/beneficios-energia-solar" class="blog-card">
+                    <div class="blog-card-img"><img src="/img/energy-pylons.webp" alt="Benefícios energia solar"></div>
+                    <div class="blog-card-body">
+                        <span class="blog-cat">BENEFÍCIOS</span>
+                        <h3>7 Benefícios de Ter Energia Solar</h3>
+                        <p>Além da economia, a energia solar traz diversos outros benefícios para sua vida.</p>
+                        <span class="blog-date"><i class="fas fa-calendar"></i> 01 Jul 2026</span>
+                    </div>
+                </a>
+                <a href="/blog/energia-solar-rural" class="blog-card">
+                    <div class="blog-card-img"><img src="/img/proj-rural.webp" alt="Energia solar rural"></div>
+                    <div class="blog-card-body">
+                        <span class="blog-cat">RURAL</span>
+                        <h3>Energia Solar para Propriedades Rurais</h3>
+                        <p>Como a energia solar pode transformar a economia da propriedade rural.</p>
+                        <span class="blog-date"><i class="fas fa-calendar"></i> 25 Jun 2026</span>
+                    </div>
+                </a>
+                <a href="/blog/inversores-solares" class="blog-card">
+                    <div class="blog-card-img"><img src="/img/solar-panels.webp" alt="Inversores solares"></div>
+                    <div class="blog-card-body">
+                        <span class="blog-cat">TECNOLOGIA</span>
+                        <h3>Guia de Inversores Solares</h3>
+                        <p>Conheça os tipos de inversores e qual o melhor para o seu projeto.</p>
+                        <span class="blog-date"><i class="fas fa-calendar"></i> 20 Jun 2026</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container cta-inner">
+            <h2>Quer economizar com energia solar?</h2>
+            <p>Fale com um especialista e descubra quanto você pode economizar.</p>
+            <div class="cta-btns">
+                <a href="/contato" class="btn btn-green btn-xl">SOLICITAR ORÇAMENTO <i class="fas fa-arrow-right"></i></a>
+                <a href="https://wa.me/5538999901309" class="btn btn-whatsapp btn-xl" target="_blank"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .page-hero { position: relative; padding: 100px 0 50px; overflow: hidden; }
+        .page-hero-bg { position: absolute; inset: 0; }
+        .page-hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,.9) 0%, rgba(0,0,0,.7) 100%); }
+        .page-hero-content { position: relative; z-index: 1; }
+        .breadcrumb { display: flex; align-items: center; gap: 6px; font-size: .75rem; color: var(--gray); margin-bottom: 12px; }
+        .breadcrumb a { color: var(--green); text-decoration: none; }
+        .page-hero h1 { font-family: var(--font-display); font-size: 2rem; color: var(--white); margin-bottom: 8px; }
+        .page-hero h1 span { color: var(--green); }
+        .page-hero p { color: var(--gray); font-size: .95rem; }
+
+        .blog-grid-section { padding: 40px 0 60px; background: var(--black); }
+        .blog-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+        .blog-card-featured { display: block; background: var(--dark-2); border: 1px solid var(--green); border-radius: var(--radius); overflow: hidden; }
+        .blog-feat-img { height: 200px; overflow: hidden; }
+        .blog-feat-img img { width: 100%; height: 100%; object-fit: cover; }
+        .blog-feat-body { padding: 20px; }
+        .blog-feat-body h2 { color: var(--white); font-size: 1.2rem; margin-bottom: 8px; }
+        .blog-feat-body p { color: var(--gray); font-size: .85rem; line-height: 1.6; margin-bottom: 10px; }
+        .blog-cat { display: inline-block; padding: 3px 8px; background: rgba(34,197,94,.1); color: var(--green); font-size: .6rem; font-weight: 700; border-radius: var(--radius-full); margin-bottom: 8px; }
+        .blog-date { color: var(--gray); font-size: .7rem; }
+        .blog-date i { margin-right: 4px; }
+
+        .blog-card { display: flex; flex-direction: column; background: var(--dark-2); border: 1px solid var(--dark-3); border-radius: var(--radius); overflow: hidden; transition: .3s; }
+        .blog-card:hover { border-color: var(--green); }
+        .blog-card-img { height: 160px; overflow: hidden; }
+        .blog-card-img img { width: 100%; height: 100%; object-fit: cover; }
+        .blog-card-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+        .blog-card-body h3 { color: var(--white); font-size: .95rem; margin-bottom: 6px; }
+        .blog-card-body p { color: var(--gray); font-size: .8rem; line-height: 1.5; margin-bottom: 8px; flex: 1; }
+
+        .cta-section { padding: 50px 0; background: var(--dark); text-align: center; }
+        .cta-inner h2 { font-family: var(--font-display); font-size: 1.5rem; color: var(--white); margin-bottom: 8px; }
+        .cta-inner p { color: var(--gray); margin-bottom: 20px; font-size: .9rem; }
+        .cta-btns { display: flex; flex-direction: column; gap: 10px; }
+
+        @media(min-width:640px) {
+            .page-hero h1 { font-size: 2.5rem; }
+            .blog-feat-img { height: 300px; }
+            .blog-grid { grid-template-columns: repeat(2, 1fr); }
+            .cta-btns { flex-direction: row; justify-content: center; }
+        }
+        @media(min-width:1024px) {
+            .page-hero { padding: 140px 0 60px; }
+            .page-hero h1 { font-size: 3rem; }
+            .blog-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+
+</Base>

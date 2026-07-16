@@ -1,0 +1,150 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Contato RGE Energia | Fale Conosco" description="Entre em contato com a RGE Energia para orçamentos, dúvidas e informações sobre energia solar em Curvelo/MG.">
+
+    <section class="page-hero">
+        <div class="page-hero-bg"><img src="/img/energy-pylons.webp" alt="Contato RGE"><div class="page-hero-overlay"></div></div>
+        <div class="container page-hero-content">
+            <nav class="breadcrumb"><a href="/">Home</a><span>/</span><span>Contato</span></nav>
+            <h1><span>Fale</span> conosco</h1>
+            <p>Estamos prontos para atender você</p>
+        </div>
+    </section>
+
+    <section class="contato">
+        <div class="container contato-grid">
+            <div class="contato-form-wrap">
+                <h2>Solicite um <span>orçamento</span></h2>
+                <p>Preencha o formulário e entraremos em contato em até 24 horas.</p>
+                <form class="contato-form" id="contatoForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nome">Nome *</label>
+                            <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="telefone">Telefone *</label>
+                            <input type="tel" id="telefone" name="telefone" required placeholder="(38) 99999-0000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="servico">Serviço de interesse *</label>
+                        <select id="servico" name="servico" required>
+                            <option value="">Selecione...</option>
+                            <option value="solar">Energia Solar</option>
+                            <option value="eficiencia">Eficiência Energética</option>
+                            <option value="projetos">Projetos Elétricos</option>
+                            <option value="subestacoes">Subestações</option>
+                            <option value="consultoria">Consultoria</option>
+                            <option value="geradores">Grupos Geradores</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva sua necessidade..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-green btn-xl btn-block">ENVIAR MENSAGEM <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+
+            <div class="contato-info">
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Endereço</h3>
+                    <p>R. José Reinaldo A. Corrêa, 127<br>Centro - Curvelo/MG</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-phone"></i></div>
+                    <h3>Telefone</h3>
+                    <p><a href="tel:+553835021309">(38) 3502-1309</a></p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+                    <h3>WhatsApp</h3>
+                    <p><a href="https://wa.me/5538999901309" target="_blank">(38) 9 9990-1309</a></p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>E-mail</h3>
+                    <p><a href="mailto:contato@rgeenergia.com.br">contato@rgeenergia.com.br</a></p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Horário</h3>
+                    <p>Seg - Sex: 08:00 - 18:00<br>Sáb: 08:00 - 12:00</p>
+                </div>
+
+                <div class="contato-social">
+                    <h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="https://facebook.com/rgeenergia" target="_blank" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com/rgeenergia" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://linkedin.com/company/rgeenergia" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .page-hero { position: relative; padding: 100px 0 50px; overflow: hidden; }
+        .page-hero-bg { position: absolute; inset: 0; }
+        .page-hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,.9) 0%, rgba(0,0,0,.7) 100%); }
+        .page-hero-content { position: relative; z-index: 1; }
+        .breadcrumb { display: flex; align-items: center; gap: 6px; font-size: .75rem; color: var(--gray); margin-bottom: 12px; }
+        .breadcrumb a { color: var(--green); text-decoration: none; }
+        .page-hero h1 { font-family: var(--font-display); font-size: 2rem; color: var(--white); margin-bottom: 8px; }
+        .page-hero h1 span { color: var(--green); }
+        .page-hero p { color: var(--gray); font-size: .95rem; }
+
+        .contato { padding: 60px 0; background: var(--black); }
+        .contato-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+        .contato-form-wrap h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--white); margin-bottom: 8px; }
+        .contato-form-wrap h2 span { color: var(--green); }
+        .contato-form-wrap > p { color: var(--gray); font-size: .85rem; margin-bottom: 20px; }
+
+        .form-row { display: grid; grid-template-columns: 1fr; gap: 12px; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; color: var(--gray-light); font-size: .8rem; font-weight: 600; margin-bottom: 4px; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 14px; background: var(--dark-2); border: 1px solid var(--dark-3); border-radius: var(--radius-sm); color: var(--white); font-size: .85rem; font-family: inherit; transition: .2s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--green); outline: none; }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: var(--gray); }
+        .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23999' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; }
+        .form-group select option { background: var(--dark-2); color: var(--white); }
+        .btn-block { display: block; width: 100%; }
+
+        .contato-info { display: grid; grid-template-columns: 1fr; gap: 12px; }
+        .info-card { background: var(--dark-2); border: 1px solid var(--dark-3); border-radius: var(--radius); padding: 16px; }
+        .info-icon { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--green); border-radius: 8px; color: var(--black); font-size: .9rem; margin-bottom: 10px; }
+        .info-card h3 { color: var(--white); font-size: .9rem; margin-bottom: 4px; }
+        .info-card p { color: var(--gray); font-size: .8rem; line-height: 1.5; }
+        .info-card a { color: var(--green); text-decoration: none; }
+        .info-card a:hover { text-decoration: underline; }
+
+        .contato-social { background: var(--dark-2); border: 1px solid var(--dark-3); border-radius: var(--radius); padding: 16px; }
+        .contato-social h3 { color: var(--white); font-size: .9rem; margin-bottom: 10px; }
+        .social-links { display: flex; gap: 10px; }
+        .social-link { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--green); border-radius: 50%; color: var(--black); font-size: .9rem; text-decoration: none; transition: .2s; }
+        .social-link:hover { background: var(--white); }
+
+        @media(min-width:640px) {
+            .page-hero h1 { font-size: 2.5rem; }
+            .form-row { grid-template-columns: 1fr 1fr; }
+            .contato-info { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media(min-width:1024px) {
+            .page-hero { padding: 140px 0 60px; }
+            .page-hero h1 { font-size: 3rem; }
+            .contato-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
+            .contato-info { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+
+</Base>

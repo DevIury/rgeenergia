@@ -1,0 +1,138 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Energia Solar Fotovoltaica | RGE Energia" description="Sistema de energia solar fotovoltaica completo com economia de até 95% na conta de luz. Garantia de 25 anos. Orçamento gratuito em Curvelo/MG.">
+
+    <section class="page-hero">
+        <div class="page-hero-bg"><img src="/img/solar-panels.webp" alt="Energia Solar"><div class="page-hero-overlay"></div></div>
+        <div class="container page-hero-content">
+            <nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/servicos">Serviços</a><span>/</span><span>Energia Solar</span></nav>
+            <h1>Energia Solar <span>Fotovoltaica</span></h1>
+            <p>Gere sua própria energia e economize até 95% na conta de luz</p>
+        </div>
+    </section>
+
+    <section class="svc-detail">
+        <div class="container svc-detail-grid">
+            <div class="svc-detail-text">
+                <h2>O que é <span>energia solar</span>?</h2>
+                <p>O sistema fotovoltaico converte a luz do sol em eletricidade de forma limpa e renovável. Os painéis solares instalados no telhado captam a radiação solar e a transformam em energia elétrica para uso residencial, comercial ou rural.</p>
+                <p>Com a <strong>compensação de créditos</strong>, você gera energia durante o dia e utiliza à noite. O excedente é injetado na rede e abate da sua conta mensal.</p>
+
+                <h2>Como <span>funciona</span>?</h2>
+                <div class="svc-steps">
+                    <div class="svc-step"><span class="svc-step-num">1</span><div><strong>Captação</strong><p>Os painéis solares captam a radiação do sol</p></div></div>
+                    <div class="svc-step"><span class="svc-step-num">2</span><div><strong>Conversão</strong><p>O inversor transforma CC em CA para uso na rede</p></div></div>
+                    <div class="svc-step"><span class="svc-step-num">3</span><div><strong>Compensação</strong><p>O excedente gera créditos na sua conta de luz</p></div></div>
+                </div>
+
+                <h2>Quanto <span>economizo</span>?</h2>
+                <div class="svc-table">
+                    <table>
+                        <thead><tr><th>Consumo Mensal</th><th>Sistema Recomendado</th><th>Economia Anual</th></tr></thead>
+                        <tbody>
+                            <tr><td>R$ 250</td><td>5 kWp</td><td>R$ 2.850</td></tr>
+                            <tr><td>R$ 500</td><td>10 kWp</td><td>R$ 5.700</td></tr>
+                            <tr><td>R$ 1.000</td><td>20 kWp</td><td>R$ 11.400</td></tr>
+                            <tr><td>R$ 2.000</td><td>40 kWp</td><td>R$ 22.800</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>Vantagens do <span>sistema</span></h2>
+                <div class="svc-features-grid">
+                    <div class="svc-feature"><i class="fas fa-check-circle"></i> Economia de até 95% na conta</div>
+                    <div class="svc-feature"><i class="fas fa-check-circle"></i> Garantia de 25 anos</div>
+                    <div class="svc-feature"><i class="fas fa-check-circle"></i> Sem manutenção frequente</div>
+                    <div class="svc-feature"><i class="fas fa-check-circle"></i> Valorização do imóvel</div>
+                    <div class="svc-feature"><i class="fas fa-check-circle"></i> Energia limpa e renovável</div>
+                    <div class="svc-feature"><i class="fas fa-check-circle"></i> Retorno em 3-5 anos</div>
+                </div>
+            </div>
+            <div class="svc-detail-sidebar">
+                <div class="svc-sidebar-card">
+                    <h3>Solicite um Orçamento</h3>
+                    <p>Fale com um especialista e descubra quanto você pode economizar.</p>
+                    <a href="/contato" class="btn btn-green btn-block">ORÇAMENTO GRÁTIS</a>
+                    <a href="https://wa.me/5538999901309" class="btn btn-whatsapp btn-block" target="_blank"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+                </div>
+                <div class="svc-sidebar-card svc-sidebar-features">
+                    <div class="svc-sf"><i class="fas fa-shield-alt"></i><div><strong>Garantia 25 anos</strong><span>Painéis e inversores</span></div></div>
+                    <div class="svc-sf"><i class="fas fa-credit-card"></i><div><strong>Sem entrada</strong><span>Financiamento disponível</span></div></div>
+                    <div class="svc-sf"><i class="fas fa-tools"></i><div><strong>Instalação grátis</strong><span>Equipe própria</span></div></div>
+                    <div class="svc-sf"><i class="fas fa-headset"></i><div><strong>Suporte 24/7</strong><span>Monitoramento remoto</span></div></div>
+                </div>
+                <div class="svc-sidebar-card">
+                    <h3>Serviços Relacionados</h3>
+                    <a href="/servicos/eficiencia-energetica" class="svc-related"><i class="fas fa-chart-line"></i> Eficiência Energética</a>
+                    <a href="/servicos/projetos-eletricos" class="svc-related"><i class="fas fa-drafting-compass"></i> Projetos Elétricos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .page-hero { position: relative; padding: 100px 0 50px; overflow: hidden; }
+        .page-hero-bg { position: absolute; inset: 0; }
+        .page-hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,.9) 0%, rgba(0,0,0,.7) 100%); }
+        .page-hero-content { position: relative; z-index: 1; }
+        .breadcrumb { display: flex; align-items: center; gap: 6px; font-size: .75rem; color: var(--gray); margin-bottom: 12px; flex-wrap: wrap; }
+        .breadcrumb a { color: var(--green); text-decoration: none; }
+        .page-hero h1 { font-family: var(--font-display); font-size: 2rem; color: var(--white); margin-bottom: 8px; }
+        .page-hero h1 span { color: var(--green); }
+        .page-hero p { color: var(--gray); font-size: .95rem; }
+
+        .svc-detail { padding: 60px 0; background: var(--black); }
+        .svc-detail-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+        .svc-detail-text h2 { font-family: var(--font-display); font-size: 1.4rem; color: var(--white); margin: 28px 0 12px; }
+        .svc-detail-text h2 span { color: var(--green); }
+        .svc-detail-text h2:first-child { margin-top: 0; }
+        .svc-detail-text > p { color: var(--gray); line-height: 1.7; margin-bottom: 12px; font-size: .9rem; }
+        .svc-detail-text > p strong { color: var(--white); }
+
+        .svc-steps { display: flex; flex-direction: column; gap: 12px; }
+        .svc-step { display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: var(--dark-2); border: 1px solid var(--dark-3); border-radius: var(--radius); }
+        .svc-step-num { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: var(--green); color: var(--black); font-weight: 700; border-radius: 50%; flex-shrink: 0; font-size: .8rem; }
+        .svc-step strong { display: block; color: var(--white); font-size: .9rem; }
+        .svc-step p { color: var(--gray); font-size: .8rem; margin: 2px 0 0; }
+
+        .svc-table { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--dark-3); }
+        .svc-table table { width: 100%; border-collapse: collapse; }
+        .svc-table th { background: var(--green); color: var(--black); padding: 10px 14px; text-align: left; font-size: .75rem; font-weight: 700; }
+        .svc-table td { padding: 10px 14px; border-bottom: 1px solid var(--dark-3); color: var(--gray-light); font-size: .8rem; }
+        .svc-table tr:last-child td { border-bottom: none; }
+
+        .svc-features-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+        .svc-feature { display: flex; align-items: center; gap: 8px; font-size: .85rem; color: var(--gray-light); }
+        .svc-feature i { color: var(--green); }
+
+        .svc-sidebar-card { background: var(--dark-2); border: 1px solid var(--dark-3); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
+        .svc-sidebar-card h3 { color: var(--white); font-size: 1rem; margin-bottom: 8px; }
+        .svc-sidebar-card > p { color: var(--gray); font-size: .8rem; margin-bottom: 14px; }
+        .btn-block { display: block; width: 100%; text-align: center; margin-bottom: 8px; }
+
+        .svc-sidebar-features { padding: 16px; }
+        .svc-sf { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--dark-3); }
+        .svc-sf:last-child { border-bottom: none; }
+        .svc-sf i { color: var(--green); font-size: 1rem; }
+        .svc-sf strong { display: block; color: var(--white); font-size: .8rem; }
+        .svc-sf span { font-size: .7rem; color: var(--gray); }
+
+        .svc-related { display: flex; align-items: center; gap: 8px; padding: 10px 0; color: var(--gray-light); font-size: .85rem; text-decoration: none; border-bottom: 1px solid var(--dark-3); }
+        .svc-related:last-child { border-bottom: none; }
+        .svc-related:hover { color: var(--green); }
+        .svc-related i { color: var(--green); }
+
+        @media(min-width:640px) {
+            .page-hero h1 { font-size: 2.5rem; }
+            .svc-features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media(min-width:1024px) {
+            .page-hero { padding: 140px 0 60px; }
+            .page-hero h1 { font-size: 3rem; }
+            .svc-detail-grid { grid-template-columns: 1fr 340px; gap: 40px; }
+        }
+    </style>
+
+</Base>
