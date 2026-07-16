@@ -147,9 +147,10 @@ img { max-width: 100%; display: block; }
 @media(min-width:1024px) {
     .container { padding: 0 32px; }
     .nav-links { display: flex; position: static; background: none; flex-direction: row; gap: 28px; align-items: center; border: none; padding: 0; max-height: none; opacity: 1; overflow: visible; }
-    .nav-mobile-header, .nav-mobile-cta { display: none; }
-    .nav-links a { font-size: .9rem; color: var(--gray); padding: 0; background: none; border-radius: 0; }
-    .nav-links a:hover, .nav-links a.active { color: var(--white); background: none; }
+    .nav-mobile-header, .nav-mobile-cta { display: none !important; }
+    .nav-mobile-links { display: flex; flex-direction: row; gap: 28px; }
+    .nav-mobile-links a { font-size: .9rem; color: var(--gray); padding: 0; background: none; border-radius: 0; }
+    .nav-mobile-links a:hover, .nav-mobile-links a.active { color: var(--white); background: none; }
     .nav-cta { display: inline-flex; }
     .hamburger { display: none; }
     .section-header { margin-bottom: 48px; }
