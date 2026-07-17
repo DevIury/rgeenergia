@@ -170,14 +170,14 @@ img { max-width: 100%; display: block; }
         color: var(--gray) !important;
         padding: 8px 14px !important;
         background: none !important;
-        border-radius: 8px !important;
-        transition: color .2s, background .2s;
+        border-radius: 0 !important;
+        transition: color .2s;
     }
     .nav-mobile-links a:hover {
         color: var(--white) !important;
-        background: rgba(255,255,255,.06) !important;
+        background: none !important;
     }
-    .nav-mobile-links a.active { color: var(--white) !important; }
+    .nav-mobile-links a.active { color: var(--white) !important; background: none !important; }
     .nav-cta { display: inline-flex; }
     .hamburger { display: none; }
     .section-header { margin-bottom: 48px; }
