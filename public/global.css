@@ -12,8 +12,9 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
 img { max-width: 100%; display: block; }
+.projetos, .depoimentos, .blog-preview, .numeros, .como-funciona, .cta-final { content-visibility: auto; contain-intrinsic-size: auto 600px; }
 .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 16px; }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: var(--radius-full); font-weight: 700; font-size: .85rem; letter-spacing: .3px; transition: all .3s ease; text-transform: uppercase; text-align: center; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: var(--radius-full); font-weight: 700; font-size: .85rem; letter-spacing: .3px; transition: background .3s, color .3s, transform .3s, box-shadow .3s; text-transform: uppercase; text-align: center; }
 .btn-xl { padding: 16px 28px; font-size: .9rem; }
 .btn-sm { padding: 10px 20px; font-size: .75rem; }
 .btn-block { width: 100%; }
@@ -32,7 +33,7 @@ img { max-width: 100%; display: block; }
 .section-header h2 { font-family: var(--font-display); font-size: 1.6rem; color: var(--white); margin-bottom: 10px; }
 .section-header h2 span { color: var(--green); }
 .section-header p { color: var(--gray); font-size: .95rem; }
-.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 12px 0; transition: all .3s; }
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 12px 0; transition: background .3s, padding .3s, box-shadow .3s; }
 .nav.scrolled { background: rgba(0,0,0,.95); backdrop-filter: blur(16px); padding: 8px 0; box-shadow: 0 2px 20px rgba(0,0,0,.5); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; }
 .logo { display: flex; align-items: center; gap: 8px; }
@@ -72,7 +73,7 @@ img { max-width: 100%; display: block; }
     border-radius: 50%;
     color: var(--gray);
     font-size: .85rem;
-    transition: all .2s;
+    transition: background .2s, color .2s;
 }
 .nav-close:hover { background: rgba(255,255,255,.12); color: var(--white); }
 .nav-mobile-links {
@@ -86,7 +87,7 @@ img { max-width: 100%; display: block; }
     font-weight: 500;
     padding: 12px 14px;
     border-radius: 10px;
-    transition: all .2s;
+    transition: color .2s, background .2s;
 }
 .nav-mobile-links a:hover,
 .nav-mobile-links a.active {
