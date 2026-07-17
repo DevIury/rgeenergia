@@ -1,95 +1,37 @@
 ---
-import Base from '../../layouts/Base.astro';
+import BlogPost from '../../layouts/BlogPost.astro';
 ---
-<Base title="Energia Solar para Propriedades Rurais | Blog RGE Energia" description="Como a energia solar pode transformar a economia da propriedade rural, reduzindo custos e aumentando a produtividade.">
+<BlogPost title="Energia Solar para Propriedades Rurais | Blog RGE Energia" description="Como a energia solar pode transformar a economia da propriedade rural, reduzindo custos e aumentando a produtividade." image="/img/proj-rural.webp" imageAlt="Energia solar rural" category="RURAL" date="25 Jun 2026" readTime="5 min">
 
-    <section class="page-hero page-hero-sm">
-        <div class="page-hero-bg"><img src="/img/proj-rural.webp" alt="Energia solar rural" loading="lazy" decoding="async"><div class="page-hero-overlay"></div></div>
-        <div class="container page-hero-content">
-            <nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span><span>Energia Solar Rural</span></nav>
-            <span class="blog-cat-sm">RURAL</span>
-            <h1>Energia Solar para <span>Propriedades Rurais</span></h1>
-            <div class="blog-meta"><span><i class="fas fa-calendar"></i> 25 Jun 2026</span><span><i class="fas fa-user"></i> RGE Energia</span></div>
-        </div>
-    </section>
+    <span slot="title">Energia Solar para <span>Propriedades Rurais</span></span>
 
-    <article class="blog-article">
-        <div class="container blog-article-grid">
-            <div class="blog-content">
-                <h2>Por que energia solar no campo?</h2>
-                <p>As propriedades rurais são grandes consumidoras de energia elétrica, seja para irrigação, ordenha mecânica,processamento de produtos ou iluminação. A energia solar fotovoltaica é uma solução ideal para o meio rural.</p>
+    <h2>Por que energia solar no campo?</h2>
+    <p>As propriedades rurais são grandes consumidoras de energia elétrica, seja para irrigação, ordenha mecânica, processamento de produtos ou iluminação. A energia solar fotovoltaica é uma solução ideal para o meio rural.</p>
 
-                <h2>Vantagens para o produtor rural</h2>
-                <ul>
-                    <li><strong>Economia significativa:</strong> Redução de 70-90% nos custos com energia</li>
-                    <li><strong>Bomba de água solar:</strong> Sistema para irrigação e abastecimento</li>
-                    <li><strong>Energia para benfeitorias:</strong> Freezers, moinhos e equipamentos</li>
-                    <li><strong>Cadeia de frio:</strong> Manutenção de produtos perecíveis</li>
-                    <li><strong>Energia para moradia:</strong> Conforto e qualidade de vida</li>
-                </ul>
+    <h2>Vantagens para o produtor rural</h2>
+    <ul>
+        <li><strong>Economia significativa:</strong> Redução de 70-90% nos custos com energia</li>
+        <li><strong>Bomba de água solar:</strong> Sistema para irrigação e abastecimento</li>
+        <li><strong>Energia para benfeitorias:</strong> Freezers, moinhos e equipamentos</li>
+        <li><strong>Cadeia de frio:</strong> Manutenção de produtos perecíveis</li>
+        <li><strong>Energia para moradia:</strong> Conforto e qualidade de vida</li>
+    </ul>
 
-                <h2>Tipos de sistemas para o campo</h2>
-                <p>Existem diferentes configurações para atender às necessidades rurais:</p>
-                <ul>
-                    <li><strong>Sistemas conectados à rede:</strong> Para propriedades com acesso à rede elétrica</li>
-                    <li><strong>Sistemas isolados:</strong> Para localidades sem acesso à rede</li>
-                    <li><strong>Bombas solares:</strong> Para irrigação e abastecimento de água</li>
-                </ul>
+    <h2>Tipos de sistemas para o campo</h2>
+    <p>Existem diferentes configurações para atender às necessidades rurais:</p>
+    <ul>
+        <li><strong>Sistemas conectados à rede:</strong> Para propriedades com acesso à rede elétrica</li>
+        <li><strong>Sistemas isolados:</strong> Para localidades sem acesso à rede</li>
+        <li><strong>Bombas solares:</strong> Para irrigação e abastecimento de água</li>
+    </ul>
 
-                <h2>Caso de sucesso</h2>
-                <p>Uma fazenda de leite em Curvelo/MG instalou sistema de 45kWp e passou a economizar <strong>R$ 7.800/mês</strong>. O investimento se pagou em apenas 3 anos e hoje a propriedade tem energia praticamente gratuita.</p>
+    <h2>Caso de sucesso</h2>
+    <p>Uma fazenda de leite em Curvelo/MG instalou sistema de 45kWp e passou a economizar <strong>R$ 7.800/mês</strong>. O investimento se pagou em apenas 3 anos e hoje a propriedade tem energia praticamente gratuita.</p>
 
-                <div class="blog-cta">
-                    <h3>Quer saber como a energia solar pode ajudar sua propriedade?</h3>
-                    <p>Fale com um especialista em soluções rurais.</p>
-                    <a href="/contato" class="btn btn-green">SOLICITAR ANÁLISE GRÁTIS <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
+    <div class="bp-cta">
+        <h3>Quer saber como a energia solar pode ajudar sua propriedade?</h3>
+        <p>Fale com um especialista em soluções rurais.</p>
+        <a href="/contato" class="btn btn-green">SOLICITAR ANÁLISE GRÁTIS <i class="fas fa-arrow-right"></i></a>
+    </div>
 
-            <aside class="blog-sidebar">
-                <div class="sidebar-card">
-                    <h3>Artigos Relacionados</h3>
-                    <a href="/blog/como-funciona-energia-solar" class="sidebar-link">Como Funciona a Energia Solar</a>
-                    <a href="/blog/retorno-investimento-solar" class="sidebar-link">Quanto Tempo para o Sistema Solar se Pagar?</a>
-                    <a href="/blog/beneficios-energia-solar" class="sidebar-link">7 Benefícios de Ter Energia Solar</a>
-                </div>
-                <div class="sidebar-card sidebar-cta">
-                    <h3>Precisa de ajuda?</h3>
-                    <p>Fale com nossa equipe e tire suas dúvidas.</p>
-                    <a href="/contato" class="btn btn-green btn-block">FALE CONOSCO</a>
-                </div>
-            </aside>
-        </div>
-    </article>
-
-    <style>
-        .page-hero-sm { padding: 100px 0 40px; }
-        .blog-cat-sm { display: inline-block; padding: 3px 8px; background: rgba(34,197,94,.1); color: var(--green); font-size: .6rem; font-weight: 700; border-radius: var(--radius-full); margin-bottom: 10px; }
-        .blog-meta { display: flex; gap: 16px; margin-top: 8px; }
-        .blog-meta span { font-size: .75rem; color: var(--gray); }
-        .blog-meta i { margin-right: 4px; color: var(--green); }
-        .blog-article { padding: 40px 0 60px; background: var(--black); }
-        .blog-article-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
-        .blog-content h2 { font-family: var(--font-display); font-size: 1.2rem; color: var(--white); margin: 24px 0 10px; }
-        .blog-content h2:first-child { margin-top: 0; }
-        .blog-content p { color: var(--gray); line-height: 1.7; margin-bottom: 12px; font-size: .9rem; }
-        .blog-content p strong { color: var(--white); }
-        .blog-content ul { list-style: none; margin-bottom: 16px; }
-        .blog-content li { position: relative; padding-left: 20px; color: var(--gray-light); font-size: .85rem; line-height: 1.8; }
-        .blog-content li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
-        .blog-content li strong { color: var(--white); }
-        .blog-cta { background: var(--dark-2); border: 1px solid var(--green); border-radius: var(--radius); padding: 24px; margin-top: 32px; text-align: center; }
-        .blog-cta h3 { color: var(--white); font-size: 1.1rem; margin-bottom: 6px; }
-        .blog-cta p { color: var(--gray); font-size: .85rem; margin-bottom: 14px; }
-        .sidebar-card { background: var(--dark-2); border: 1px solid var(--dark-3); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
-        .sidebar-card h3 { color: var(--white); font-size: .95rem; margin-bottom: 10px; }
-        .sidebar-link { display: block; padding: 8px 0; color: var(--gray-light); font-size: .8rem; text-decoration: none; border-bottom: 1px solid var(--dark-3); }
-        .sidebar-link:last-child { border-bottom: none; }
-        .sidebar-link:hover { color: var(--green); }
-        .sidebar-cta p { color: var(--gray); font-size: .8rem; margin-bottom: 12px; }
-        .btn-block { display: block; width: 100%; text-align: center; }
-        @media(min-width:640px) { .page-hero h1 { font-size: 2.5rem; } }
-        @media(min-width:1024px) { .page-hero-sm { padding: 140px 0 50px; } .page-hero h1 { font-size: 2.5rem; } .blog-article-grid { grid-template-columns: 1fr 300px; gap: 40px; } }
-    </style>
-
-</Base>
+</BlogPost>

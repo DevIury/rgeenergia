@@ -35,6 +35,48 @@ const currentPath = Astro.url.pathname;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     <link rel="stylesheet" href="/global.css">
+    <script>
+    document.addEventListener('astro:page-load', function() {
+        var hamburger = document.getElementById('hamburger');
+        var navLinks = document.getElementById('navLinks');
+        var navClose = document.getElementById('navClose');
+        if (!hamburger || !navLinks) return;
+        hamburger.onclick = function() {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        };
+        if (navClose) {
+            navClose.onclick = function() {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('open');
+            };
+        }
+        var links = navLinks.querySelectorAll('nav a');
+        for (var i = 0; i < links.length; i++) {
+            links[i].onclick = function() {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('open');
+            };
+        }
+        window.onscroll = function() {
+            var nav = document.getElementById('nav');
+            if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
+        };
+        window.onscroll();
+    });
+    document.addEventListener('astro:page-load', function() {
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
+                var href = a.getAttribute('href');
+                if (href && href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    var t = document.querySelector(href);
+                    if (t) window.scrollTo({ top: t.offsetTop - 70, behavior: 'smooth' });
+                }
+            });
+        });
+    });
+    </script>
     <ClientRouter />
     <script type="application/ld+json" set:html={JSON.stringify({
         "@context": "https://schema.org",
@@ -49,7 +91,7 @@ const currentPath = Astro.url.pathname;
     })} />
 </head>
 <body>
-<nav class="nav" id="nav" transition:persist>
+<nav class="nav" id="nav">
     <div class="nav-inner container">
         <a href="/" class="logo">
             <img src="/img/logo.svg" alt="RGE Energia" class="logo-img">
@@ -59,11 +101,11 @@ const currentPath = Astro.url.pathname;
                 <a href="/" class="logo">
                     <img src="/img/logo.svg" alt="RGE Energia" class="logo-img">
                 </a>
-                <button class="nav-close" id="navClose" aria-label="Fechar menu">
+                <button class="nav-close" id="navClose" aria-label="Fechar menu" onclick="document.getElementById('hamburger').classList.remove('active');document.getElementById('navLinks').classList.remove('open');">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <nav class="nav-mobile-links">
+            <nav class="nav-mobile-links" onclick="var h=document.getElementById('hamburger');var n=document.getElementById('navLinks');if(h)h.classList.remove('active');if(n)n.classList.remove('open');">
                 <a href="/" class:list={{ active: currentPath === '/' }}>Inicio</a>
                 <a href="/sobre" class:list={{ active: currentPath === '/sobre' }}>Sobre</a>
                 <a href="/servicos" class:list={{ active: currentPath.startsWith('/servicos') }}>Servicos</a>
@@ -74,7 +116,7 @@ const currentPath = Astro.url.pathname;
             <a href="/contato" class="btn btn-green btn-block nav-mobile-cta"><i class="fas fa-phone-alt"></i> Fale Conosco</a>
         </div>
         <a href="/contato" class="btn btn-green nav-cta"><i class="fas fa-phone-alt"></i> Fale Conosco</a>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
+        <button class="hamburger" id="hamburger" aria-label="Menu" onclick="this.classList.toggle('active');document.getElementById('navLinks').classList.toggle('open');">
             <span></span><span></span><span></span>
         </button>
     </div>
@@ -134,36 +176,5 @@ const currentPath = Astro.url.pathname;
     <span class="wa-tooltip">Fale Conosco</span>
 </a>
 
-<script>
-    document.addEventListener('astro:page-load', () => {
-        const nav = document.getElementById('nav');
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        const navClose = document.getElementById('navClose');
-        window.addEventListener('scroll', () => {
-            nav?.classList.toggle('scrolled', window.scrollY > 50);
-        });
-        function closeMenu() {
-            hamburger?.classList.remove('active');
-            navLinks?.classList.remove('open');
-        }
-        hamburger?.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks?.classList.toggle('open');
-        });
-        navClose?.addEventListener('click', closeMenu);
-        navLinks?.querySelectorAll('nav a').forEach(a => a.addEventListener('click', closeMenu));
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
-                const href = a.getAttribute('href');
-                if (href && href.startsWith('#')) {
-                    e.preventDefault();
-                    const t = document.querySelector(href);
-                    if (t) window.scrollTo({ top: (t as HTMLElement).offsetTop - 70, behavior: 'smooth' });
-                }
-            });
-        });
-    });
-</script>
 </body>
 </html>

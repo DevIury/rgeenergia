@@ -1,97 +1,39 @@
 ---
-import Base from '../../layouts/Base.astro';
+import BlogPost from '../../layouts/BlogPost.astro';
 ---
-<Base title="Quanto Tempo para o Sistema Solar se Pagar? | Blog RGE Energia" description="Entenda o retorno do investimento em energia solar e por que vale a pena investir em um sistema fotovoltaico.">
+<BlogPost title="Quanto Tempo para o Sistema Solar se Pagar? | Blog RGE Energia" description="Entenda o retorno do investimento em energia solar e por que vale a pena investir em um sistema fotovoltaico." image="/img/proj-comercial.webp" imageAlt="Retorno investimento" category="INVESTIMENTO" date="05 Jul 2026" readTime="5 min">
 
-    <section class="page-hero page-hero-sm">
-        <div class="page-hero-bg"><img src="/img/proj-comercial.webp" alt="Retorno investimento" loading="lazy" decoding="async"><div class="page-hero-overlay"></div></div>
-        <div class="container page-hero-content">
-            <nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span><span>Retorno do Investimento Solar</span></nav>
-            <span class="blog-cat-sm">INVESTIMENTO</span>
-            <h1>Quanto Tempo para o Sistema Solar <span>se Pagar</span>?</h1>
-            <div class="blog-meta"><span><i class="fas fa-calendar"></i> 05 Jul 2026</span><span><i class="fas fa-user"></i> RGE Energia</span></div>
-        </div>
-    </section>
+    <span slot="title">Quanto Tempo para o Sistema Solar <span>se Pagar</span>?</span>
 
-    <article class="blog-article">
-        <div class="container blog-article-grid">
-            <div class="blog-content">
-                <h2>O que é payback?</h2>
-                <p>Payback é o tempo necessário para que o investimento em um sistema de energia solar se pague completamente. Após esse período, toda a energia gerada é lucro puro para o consumidor.</p>
+    <h2>O que é payback?</h2>
+    <p>Payback é o tempo necessário para que o investimento em um sistema de energia solar se pague completamente. Após esse período, toda a energia gerada é lucro puro para o consumidor.</p>
 
-                <h2>Quanto tempo leva?</h2>
-                <p>O tempo de payback varia de acordo com several fatores, mas em média o sistema solar se paga em <strong>3 a 5 anos</strong>. Isso significa que, depois desse período, você terá energia praticamente grátis por mais 20 anos!</p>
+    <h2>Quanto tempo leva?</h2>
+    <p>O tempo de payback varia de acordo com vários fatores, mas em média o sistema solar se paga em <strong>3 a 5 anos</strong>. Isso significa que, depois desse período, você terá energia praticamente grátis por mais 20 anos!</p>
 
-                <h2>Fatores que influenciam o payback</h2>
-                <ul>
-                    <li><strong>Consumo mensal:</strong> Quanto maior o consumo, maior a economia</li>
-                    <li><strong>Tarifa da concessionária:</strong> Tarifas mais altas = payback mais rápido</li>
-                    <li><strong>Irradiação solar:</strong> Regiões com mais sol geram mais energia</li>
-                    <li><strong>Tamanho do sistema:</strong> Sistemas maiores economizam mais</li>
-                </ul>
+    <h2>Fatores que influenciam o payback</h2>
+    <ul>
+        <li><strong>Consumo mensal:</strong> Quanto maior o consumo, maior a economia</li>
+        <li><strong>Tarifa da concessionária:</strong> Tarifas mais altas = payback mais rápido</li>
+        <li><strong>Irradiação solar:</strong> Regiões com mais sol geram mais energia</li>
+        <li><strong>Tamanho do sistema:</strong> Sistemas maiores economizam mais</li>
+    </ul>
 
-                <h2>Exemplo prático</h2>
-                <p>Imagine um sistema de 10kWp que custa R$ 45.000. Se a economia mensal for de R$ 1.200:</p>
-                <ul>
-                    <li>Payback: 45.000 ÷ 1.200 = <strong>37,5 meses (3 anos)</strong></li>
-                    <li>Economia em 25 anos: R$ 360.000</li>
-                    <li>Lucro líquido: R$ 315.000</li>
-                </ul>
+    <h2>Exemplo prático</h2>
+    <p>Imagine um sistema de 10kWp que custa R$ 45.000. Se a economia mensal for de R$ 1.200:</p>
+    <ul>
+        <li>Payback: 45.000 ÷ 1.200 = <strong>37,5 meses (3 anos)</strong></li>
+        <li>Economia em 25 anos: R$ 360.000</li>
+        <li>Lucro líquido: R$ 315.000</li>
+    </ul>
 
-                <h2>Conclusão</h2>
-                <p>A energia solar é um dos investimentos mais seguros e lucrativos disponíveis hoje. Com payback de 3-5 anos e garantia de 25 anos, é uma oportunidade que não pode ser desperdiçada.</p>
+    <h2>Conclusão</h2>
+    <p>A energia solar é um dos investimentos mais seguros e lucrativos disponíveis hoje. Com payback de 3-5 anos e garantia de 25 anos, é uma oportunidade que não pode ser desperdiçada.</p>
 
-                <div class="blog-cta">
-                    <h3>Descubra quanto você pode economizar</h3>
-                    <p>Fale com um especialista e faça sua análise personalizada.</p>
-                    <a href="/contato" class="btn btn-green">SOLICITAR ANÁLISE GRÁTIS <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
+    <div class="bp-cta">
+        <h3>Descubra quanto você pode economizar</h3>
+        <p>Fale com um especialista e faça sua análise personalizada.</p>
+        <a href="/contato" class="btn btn-green">SOLICITAR ANÁLISE GRÁTIS <i class="fas fa-arrow-right"></i></a>
+    </div>
 
-            <aside class="blog-sidebar">
-                <div class="sidebar-card">
-                    <h3>Artigos Relacionados</h3>
-                    <a href="/blog/como-funciona-energia-solar" class="sidebar-link">Como Funciona a Energia Solar</a>
-                    <a href="/blog/economia-conta-luz" class="sidebar-link">10 Dicas para Economizar na Conta de Luz</a>
-                    <a href="/blog/beneficios-energia-solar" class="sidebar-link">7 Benefícios de Ter Energia Solar</a>
-                </div>
-                <div class="sidebar-card sidebar-cta">
-                    <h3>Precisa de ajuda?</h3>
-                    <p>Fale com nossa equipe e tire suas dúvidas.</p>
-                    <a href="/contato" class="btn btn-green btn-block">FALE CONOSCO</a>
-                </div>
-            </aside>
-        </div>
-    </article>
-
-    <style>
-        .page-hero-sm { padding: 100px 0 40px; }
-        .blog-cat-sm { display: inline-block; padding: 3px 8px; background: rgba(34,197,94,.1); color: var(--green); font-size: .6rem; font-weight: 700; border-radius: var(--radius-full); margin-bottom: 10px; }
-        .blog-meta { display: flex; gap: 16px; margin-top: 8px; }
-        .blog-meta span { font-size: .75rem; color: var(--gray); }
-        .blog-meta i { margin-right: 4px; color: var(--green); }
-        .blog-article { padding: 40px 0 60px; background: var(--black); }
-        .blog-article-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
-        .blog-content h2 { font-family: var(--font-display); font-size: 1.2rem; color: var(--white); margin: 24px 0 10px; }
-        .blog-content h2:first-child { margin-top: 0; }
-        .blog-content p { color: var(--gray); line-height: 1.7; margin-bottom: 12px; font-size: .9rem; }
-        .blog-content p strong { color: var(--white); }
-        .blog-content ul { list-style: none; margin-bottom: 16px; }
-        .blog-content li { position: relative; padding-left: 20px; color: var(--gray-light); font-size: .85rem; line-height: 1.8; }
-        .blog-content li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
-        .blog-content li strong { color: var(--white); }
-        .blog-cta { background: var(--dark-2); border: 1px solid var(--green); border-radius: var(--radius); padding: 24px; margin-top: 32px; text-align: center; }
-        .blog-cta h3 { color: var(--white); font-size: 1.1rem; margin-bottom: 6px; }
-        .blog-cta p { color: var(--gray); font-size: .85rem; margin-bottom: 14px; }
-        .sidebar-card { background: var(--dark-2); border: 1px solid var(--dark-3); border-radius: var(--radius); padding: 20px; margin-bottom: 16px; }
-        .sidebar-card h3 { color: var(--white); font-size: .95rem; margin-bottom: 10px; }
-        .sidebar-link { display: block; padding: 8px 0; color: var(--gray-light); font-size: .8rem; text-decoration: none; border-bottom: 1px solid var(--dark-3); }
-        .sidebar-link:last-child { border-bottom: none; }
-        .sidebar-link:hover { color: var(--green); }
-        .sidebar-cta p { color: var(--gray); font-size: .8rem; margin-bottom: 12px; }
-        .btn-block { display: block; width: 100%; text-align: center; }
-        @media(min-width:640px) { .page-hero h1 { font-size: 2.5rem; } }
-        @media(min-width:1024px) { .page-hero-sm { padding: 140px 0 50px; } .page-hero h1 { font-size: 2.5rem; } .blog-article-grid { grid-template-columns: 1fr 300px; gap: 40px; } }
-    </style>
-
-</Base>
+</BlogPost>
