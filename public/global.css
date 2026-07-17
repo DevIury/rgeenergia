@@ -47,8 +47,7 @@ img { max-width: 100%; display: block; }
     right: 0;
     width: 300px;
     height: 100dvh;
-    background: var(--dark);
-    border-left: 1px solid rgba(255,255,255,.06);
+    background: transparent;
     flex-direction: column;
     z-index: 1001;
     padding: 0;
@@ -78,13 +77,13 @@ img { max-width: 100%; display: block; }
 .nav-mobile-top {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 16px 20px;
     border-bottom: 1px solid rgba(255,255,255,.06);
     position: relative;
     z-index: 1;
-    background: var(--dark);
 }
+.nav-mobile-top .logo-img { height: 32px; width: auto; }
 .nav-close {
     width: 36px; height: 36px;
     display: flex; align-items: center; justify-content: center;
@@ -103,7 +102,6 @@ img { max-width: 100%; display: block; }
     flex: 1;
     position: relative;
     z-index: 1;
-    background: var(--dark);
 }
 .nav-mobile-links a {
     display: flex;
