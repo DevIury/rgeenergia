@@ -224,6 +224,7 @@ img { max-width: 100%; display: block; }
     .nav-mobile-links a:hover { color: var(--white); background: transparent; }
     .nav-mobile-links a.active { color: var(--white); background: transparent; }
     .nav-cta { display: inline-flex; }
+.nav-cta i { transform: rotate(180deg); }
     .hamburger { display: none; }
     .section-header { margin-bottom: 48px; }
     .section-header h2 { font-size: 2.4rem; }
