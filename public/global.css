@@ -134,6 +134,12 @@ img { max-width: 100%; display: block; }
     color: var(--green);
     background: rgba(34,197,94,.08);
 }
+.nav-mobile-cta {
+    padding: 16px 12px;
+    border-top: 1px solid rgba(255,255,255,.06);
+    position: relative;
+    z-index: 1;
+}
 
 .hamburger {
     display: flex; flex-direction: column; gap: 5px; padding: 10px;
