@@ -132,16 +132,29 @@ import Base from '../layouts/Base.astro';
                     btns.forEach(b => b.classList.remove('active'));
                     btn.classList.add('active');
                     const f = btn.getAttribute('data-filter');
-                    items.forEach(item => {
+                    items.forEach((item, i) => {
                         const el = item as HTMLElement;
                         if (f === 'all' || el.getAttribute('data-cat') === f) {
                             el.style.display = '';
+                            el.style.animation = `projFadeIn .4s ${i * .06}s both`;
                         } else {
-                            el.style.display = 'none';
+                            el.style.animation = 'projFadeOut .2s both';
+                            setTimeout(() => { el.style.display = 'none'; }, 200);
                         }
                     });
                 });
             });
+
+            const revealObs = new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+            }, { threshold: .1, rootMargin: '50px' });
+            document.querySelectorAll('.proj-item').forEach(el => { el.classList.add('reveal'); revealObs.observe(el); });
+            if (!document.getElementById('reveal-style')) {
+                const st = document.createElement('style');
+                st.id = 'reveal-style';
+                st.textContent = '.reveal{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}';
+                document.head.appendChild(st);
+            }
         });
     </script>
 
@@ -180,6 +193,9 @@ import Base from '../layouts/Base.astro';
         .cta-inner h2 { font-family: var(--font-display); font-size: 1.5rem; color: var(--white); margin-bottom: 8px; }
         .cta-inner p { color: var(--gray); margin-bottom: 20px; font-size: .9rem; }
         .cta-btns { display: flex; flex-direction: column; gap: 10px; }
+
+        @keyframes projFadeIn { 0% { opacity: 0; transform: translateY(12px) scale(.97); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes projFadeOut { 0% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(.95); } }
 
         @media(min-width:640px) {
             .page-hero h1 { font-size: 2.5rem; }

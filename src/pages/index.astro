@@ -1,7 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="RGE Energia | Solar que Gera Economia de Verdade" description="Especialistas em energia solar fotovoltaica em Curvelo/MG. Reduza sua conta de luz em até 95% com sistema solar profissional. Orçamento gratuito.">
+<Base title="RGE Energia | Solar que Gera Economia de Verdade" description="Especialistas em energia solar fotovoltaica em Curvelo/MG. Reduza sua conta de luz em até 95% com sistema solar profissional. Orçamento gratuito."
+    faq={[
+        { question: "Quanto custa instalar energia solar?", answer: "O investimento varia conforme o consumo. Sistemas residenciais começam a partir de R$ 15.000. Oferecemos parcelamento em até 60x sem juros e análise gratuita do seu consumo." },
+        { question: "Quanto tempo leva para o sistema se pagar?", answer: "Em média, o retorno do investimento acontece entre 3 e 5 anos, dependendo do consumo e da tarifa da concessionária. Depois disso, a energia é praticamente gratuita." },
+        { question: "A energia solar funciona em dias nublados?", answer: "Sim! Os painéis geram energia mesmo em dias nublados, com eficiência de cerca de 25-40%. Além disso, o sistema é compensado pela rede elétrica." },
+        { question: "Qual a garantia dos painéis solares?", answer: "Oferecemos garantia de 25 anos nos módulos fotovoltaicos e 10 anos nos inversores. Nosso suporte pós-venda monitora a performance do sistema continuamente." },
+        { question: "Preciso de autorização da prefeitura?", answer: "Sim, é necessário o registro na concessionária local. Cuidamos de toda a documentação e aprovação para você." }
+    ]}>
 
     <!-- HERO -->
     <section class="hero">
@@ -267,6 +274,15 @@ import Base from '../layouts/Base.astro';
                 <p>Informações para você tomar a melhor decisão</p>
             </div>
             <div class="blog-grid">
+                <a href="/blog/energia-solar-minas-gerais" class="blog-card">
+                    <div class="blog-img"><img src="/img/energy-pylons.webp" alt="Solar MG" loading="lazy" decoding="async"></div>
+                    <div class="blog-body">
+                        <span class="blog-cat">MERCADO</span>
+                        <h4>Energia Solar em Minas Gerais</h4>
+                        <p>Oportunidades e incentivos no estado.</p>
+                        <span class="blog-date"><i class="fas fa-calendar"></i> 20 Jul 2026</span>
+                    </div>
+                </a>
                 <a href="/blog/como-funciona-energia-solar" class="blog-card">
                     <div class="blog-img"><img src="/img/solar-panels.webp" alt="Como funciona energia solar" loading="lazy" decoding="async"></div>
                     <div class="blog-body">

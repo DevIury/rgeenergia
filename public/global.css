@@ -146,6 +146,14 @@ img { max-width: 100%; display: block; }
 .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    html { scroll-behavior: auto; }
+}
+:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .footer { padding: 40px 0 0; background: var(--black); border-top: 1px solid var(--dark-3); }
 .footer-inner { display: grid; grid-template-columns: 1fr; gap: 28px; padding-bottom: 28px; border-bottom: 1px solid var(--dark-3); text-align: center; }
 .footer-brand p { color: var(--gray); font-size: .85rem; line-height: 1.6; margin: 12px 0 16px; }
