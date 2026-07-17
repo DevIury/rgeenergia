@@ -140,6 +140,9 @@ img { max-width: 100%; display: block; }
     position: relative;
     z-index: 1;
 }
+@media(min-width:1024px) {
+    .nav-mobile-cta { display: none; }
+}
 
 .hamburger {
     display: flex; flex-direction: column; gap: 5px; padding: 10px;
