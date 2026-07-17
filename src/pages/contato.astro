@@ -4,7 +4,7 @@ import Base from '../layouts/Base.astro';
 <Base title="Contato RGE Energia | Fale Conosco" description="Entre em contato com a RGE Energia para orçamentos, dúvidas e informações sobre energia solar em Curvelo/MG.">
 
     <section class="page-hero">
-        <div class="page-hero-bg"><img src="/img/energy-pylons.webp" alt="Contato RGE"><div class="page-hero-overlay"></div></div>
+        <div class="page-hero-bg"><img src="/img/energy-pylons.webp" alt="Contato RGE" loading="lazy" decoding="async"><div class="page-hero-overlay"></div></div>
         <div class="container page-hero-content">
             <nav class="breadcrumb"><a href="/">Home</a><span>/</span><span>Contato</span></nav>
             <h1><span>Fale</span> conosco</h1>
@@ -51,6 +51,11 @@ import Base from '../layouts/Base.astro';
                     </div>
                     <button type="submit" class="btn btn-green btn-xl btn-block">ENVIAR MENSAGEM <i class="fas fa-paper-plane"></i></button>
                 </form>
+                <div id="formSuccess" style="display:none; text-align:center; padding:24px 0;">
+                    <div style="font-size:2rem; margin-bottom:12px;">✓</div>
+                    <h3 style="color:var(--green); margin-bottom:8px;">Mensagem enviada!</h3>
+                    <p style="color:var(--gray); font-size:.85rem;">Entraremos em contato em até 24 horas.</p>
+                </div>
             </div>
 
             <div class="contato-info">
@@ -146,5 +151,23 @@ import Base from '../layouts/Base.astro';
             .contato-info { grid-template-columns: repeat(3, 1fr); }
         }
     </style>
+
+    <script>
+        const form = document.getElementById('contatoForm') as HTMLFormElement;
+        const success = document.getElementById('formSuccess');
+        form?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const fd = new FormData(form);
+            const nome = fd.get('nome') || '';
+            const telefone = fd.get('telefone') || '';
+            const email = fd.get('email') || '';
+            const servico = fd.get('servico') || '';
+            const mensagem = fd.get('mensagem') || '';
+            const texto = `Olá! Gostaria de um orçamento.\n\n*Nome:* ${nome}\n*Telefone:* ${telefone}\n*E-mail:* ${email}\n*Serviço:* ${servico}\n*Mensagem:* ${mensagem}`;
+            window.open(`https://wa.me/5538999901309?text=${encodeURIComponent(texto)}`, '_blank');
+            form.style.display = 'none';
+            if (success) success.style.display = 'block';
+        });
+    </script>
 
 </Base>

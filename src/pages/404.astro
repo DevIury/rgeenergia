@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Pagina nao encontrada | RGE Energia" description="A pagina que voce procura nao existe. Volte para a pagina inicial da RGE Energia.">
+
+    <section class="error-page">
+        <div class="container error-inner">
+            <div class="error-code">404</div>
+            <h1>Pagina nao encontrada</h1>
+            <p>O link que voce acessou nao existe ou foi movido. Que tal voltar para a pagina inicial?</p>
+            <div class="error-btns">
+                <a href="/" class="btn btn-green"><i class="fas fa-home"></i> VOLTA AO INICIO</a>
+                <a href="https://wa.me/5538999901309" class="btn btn-outline-green" target="_blank"><i class="fab fa-whatsapp"></i> FALAR NO WHATSAPP</a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .error-page {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 16px;
+            background: var(--black);
+        }
+        .error-code {
+            font-family: var(--font-display);
+            font-size: 8rem;
+            font-weight: 700;
+            color: var(--green);
+            line-height: 1;
+            opacity: .15;
+            margin-bottom: -20px;
+        }
+        .error-page h1 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        .error-page p {
+            color: var(--gray);
+            font-size: .95rem;
+            max-width: 400px;
+            margin: 0 auto 28px;
+            line-height: 1.6;
+        }
+        .error-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+        @media(min-width:640px) {
+            .error-code { font-size: 12rem; }
+            .error-page h1 { font-size: 2rem; }
+            .error-btns { flex-direction: row; justify-content: center; }
+        }
+    </style>
+
+</Base>
