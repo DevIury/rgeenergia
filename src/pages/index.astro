@@ -313,31 +313,36 @@ import Base from '../layouts/Base.astro';
     </section>
 
     <script>
-        const nums = document.querySelectorAll('.num-val');
-        const obs = new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    const el = e.target as HTMLElement;
-                    const target = parseInt(el.dataset.target || '0');
-                    let cur = 0; const step = target / 60;
-                    const timer = setInterval(() => {
-                        cur += step;
-                        if (cur >= target) { el.textContent = target >= 1000000 ? (target/1000000).toFixed(1)+'M' : target.toLocaleString('pt-BR'); clearInterval(timer); }
-                        else { el.textContent = Math.floor(cur).toLocaleString('pt-BR'); }
-                    }, 25);
-                    obs.unobserve(el);
-                }
-            });
-        }, { threshold: .5 });
-        nums.forEach(n => obs.observe(n));
+        document.addEventListener('astro:page-load', () => {
+            const nums = document.querySelectorAll('.num-val');
+            const obs = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        const el = e.target as HTMLElement;
+                        const target = parseInt(el.dataset.target || '0');
+                        let cur = 0; const step = target / 60;
+                        const timer = setInterval(() => {
+                            cur += step;
+                            if (cur >= target) { el.textContent = target >= 1000000 ? (target/1000000).toFixed(1)+'M' : target.toLocaleString('pt-BR'); clearInterval(timer); }
+                            else { el.textContent = Math.floor(cur).toLocaleString('pt-BR'); }
+                        }, 25);
+                        obs.unobserve(el);
+                    }
+                });
+            }, { threshold: .5 });
+            nums.forEach(n => obs.observe(n));
 
-        const revealObs = new IntersectionObserver(entries => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-        }, { threshold: .1 });
-        document.querySelectorAll('.serv-card, .proj-card, .depo-card, .passo, .num-card, .blog-card').forEach(el => { el.classList.add('reveal'); revealObs.observe(el); });
-        const st = document.createElement('style');
-        st.textContent = '.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}';
-        document.head.appendChild(st);
+            const revealObs = new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+            }, { threshold: .1 });
+            document.querySelectorAll('.serv-card, .proj-card, .depo-card, .passo, .num-card, .blog-card').forEach(el => { el.classList.add('reveal'); revealObs.observe(el); });
+            if (!document.getElementById('reveal-style')) {
+                const st = document.createElement('style');
+                st.id = 'reveal-style';
+                st.textContent = '.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s,transform .5s}.reveal.visible{opacity:1;transform:none}';
+                document.head.appendChild(st);
+            }
+        });
     </script>
 
     <style>

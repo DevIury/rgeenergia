@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" fill="none">
+  <!-- Lightning bolt -->
+  <path d="M28 8L12 42h16L20 72l28-38H30L42 8H28z" fill="url(#bolt-grad)"/>
+  <defs>
+    <linearGradient id="bolt-grad" x1="12" y1="8" x2="42" y2="72" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4ade80"/>
+      <stop offset="1" stop-color="#16a34a"/>
+    </linearGradient>
+  </defs>
+  <!-- rge text -->
+  <text x="60" y="52" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="42" fill="#ffffff" letter-spacing="-1">rge</text>
+  <!-- energia text -->
+  <text x="158" y="52" font-family="'Space Grotesk', sans-serif" font-weight="500" font-size="36" fill="#ffffff" opacity=".35" letter-spacing="-0.5">energia</text>
+</svg>

@@ -124,20 +124,22 @@ import Base from '../layouts/Base.astro';
     </section>
 
     <script>
-        const btns = document.querySelectorAll('.filter-btn');
-        const items = document.querySelectorAll('.proj-item');
-        btns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                btns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const f = btn.getAttribute('data-filter');
-                items.forEach(item => {
-                    const el = item as HTMLElement;
-                    if (f === 'all' || el.getAttribute('data-cat') === f) {
-                        el.style.display = '';
-                    } else {
-                        el.style.display = 'none';
-                    }
+        document.addEventListener('astro:page-load', () => {
+            const btns = document.querySelectorAll('.filter-btn');
+            const items = document.querySelectorAll('.proj-item');
+            btns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const f = btn.getAttribute('data-filter');
+                    items.forEach(item => {
+                        const el = item as HTMLElement;
+                        if (f === 'all' || el.getAttribute('data-cat') === f) {
+                            el.style.display = '';
+                        } else {
+                            el.style.display = 'none';
+                        }
+                    });
                 });
             });
         });

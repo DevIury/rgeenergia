@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from "astro:transitions";
 interface Props {
     title: string;
     description: string;
@@ -35,6 +36,7 @@ const currentPath = Astro.url.pathname;
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
     <link rel="stylesheet" href="/global.css">
+    <ClientRouter />
     <script type="application/ld+json" set:html={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
@@ -48,17 +50,15 @@ const currentPath = Astro.url.pathname;
     })} />
 </head>
 <body>
-<nav class="nav" id="nav">
+<nav class="nav" id="nav" transition:persist>
     <div class="nav-inner container">
         <a href="/" class="logo">
-            <div class="logo-mark"><i class="fas fa-bolt"></i></div>
-            <div class="logo-text"><span>RGE</span> Energia</div>
+            <img src="/img/logo.svg" alt="RGE Energia" class="logo-img">
         </a>
         <div class="nav-links" id="navLinks">
             <div class="nav-mobile-header">
                 <a href="/" class="logo">
-                    <div class="logo-mark"><i class="fas fa-bolt"></i></div>
-                    <div class="logo-text"><span>RGE</span> Energia</div>
+                    <img src="/img/logo.svg" alt="RGE Energia" class="logo-img">
                 </a>
                 <button class="nav-close" id="navClose" aria-label="Fechar menu">
                     <i class="fas fa-times"></i>
@@ -86,7 +86,7 @@ const currentPath = Astro.url.pathname;
 <footer class="footer">
     <div class="container footer-inner">
         <div class="footer-brand">
-            <a href="/" class="logo"><div class="logo-mark"><i class="fas fa-bolt"></i></div><div class="logo-text"><span>RGE</span> Energia</div></a>
+            <a href="/" class="logo"><img src="/img/logo.svg" alt="RGE Energia" class="logo-img"></a>
             <p>Especialistas em <strong>energia solar fotovoltaica</strong> para residencias, comercios e industrias em Curvelo/MG e regiao.</p>
             <div class="socials">
                 <a href="https://www.facebook.com/rgeenergia" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
@@ -136,31 +136,33 @@ const currentPath = Astro.url.pathname;
 </a>
 
 <script>
-    const nav = document.getElementById('nav');
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    const navClose = document.getElementById('navClose');
-    window.addEventListener('scroll', () => {
-        nav?.classList.toggle('scrolled', window.scrollY > 50);
-    });
-    function closeMenu() {
-        hamburger?.classList.remove('active');
-        navLinks?.classList.remove('open');
-    }
-    hamburger?.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks?.classList.toggle('open');
-    });
-    navClose?.addEventListener('click', closeMenu);
-    navLinks?.querySelectorAll('nav a').forEach(a => a.addEventListener('click', closeMenu));
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-            const href = a.getAttribute('href');
-            if (href && href.startsWith('#')) {
-                e.preventDefault();
-                const t = document.querySelector(href);
-                if (t) window.scrollTo({ top: (t as HTMLElement).offsetTop - 70, behavior: 'smooth' });
-            }
+    document.addEventListener('astro:page-load', () => {
+        const nav = document.getElementById('nav');
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        const navClose = document.getElementById('navClose');
+        window.addEventListener('scroll', () => {
+            nav?.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        function closeMenu() {
+            hamburger?.classList.remove('active');
+            navLinks?.classList.remove('open');
+        }
+        hamburger?.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks?.classList.toggle('open');
+        });
+        navClose?.addEventListener('click', closeMenu);
+        navLinks?.querySelectorAll('nav a').forEach(a => a.addEventListener('click', closeMenu));
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const href = a.getAttribute('href');
+                if (href && href.startsWith('#')) {
+                    e.preventDefault();
+                    const t = document.querySelector(href);
+                    if (t) window.scrollTo({ top: (t as HTMLElement).offsetTop - 70, behavior: 'smooth' });
+                }
+            });
         });
     });
 </script>

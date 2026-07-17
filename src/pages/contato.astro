@@ -153,20 +153,22 @@ import Base from '../layouts/Base.astro';
     </style>
 
     <script>
-        const form = document.getElementById('contatoForm') as HTMLFormElement;
-        const success = document.getElementById('formSuccess');
-        form?.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const fd = new FormData(form);
-            const nome = fd.get('nome') || '';
-            const telefone = fd.get('telefone') || '';
-            const email = fd.get('email') || '';
-            const servico = fd.get('servico') || '';
-            const mensagem = fd.get('mensagem') || '';
-            const texto = `Olá! Gostaria de um orçamento.\n\n*Nome:* ${nome}\n*Telefone:* ${telefone}\n*E-mail:* ${email}\n*Serviço:* ${servico}\n*Mensagem:* ${mensagem}`;
-            window.open(`https://wa.me/5538999901309?text=${encodeURIComponent(texto)}`, '_blank');
-            form.style.display = 'none';
-            if (success) success.style.display = 'block';
+        document.addEventListener('astro:page-load', () => {
+            const form = document.getElementById('contatoForm') as HTMLFormElement;
+            const success = document.getElementById('formSuccess');
+            form?.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const fd = new FormData(form);
+                const nome = fd.get('nome') || '';
+                const telefone = fd.get('telefone') || '';
+                const email = fd.get('email') || '';
+                const servico = fd.get('servico') || '';
+                const mensagem = fd.get('mensagem') || '';
+                const texto = `Olá! Gostaria de um orçamento.\n\n*Nome:* ${nome}\n*Telefone:* ${telefone}\n*E-mail:* ${email}\n*Serviço:* ${servico}\n*Mensagem:* ${mensagem}`;
+                window.open(`https://wa.me/5538999901309?text=${encodeURIComponent(texto)}`, '_blank');
+                form.style.display = 'none';
+                if (success) success.style.display = 'block';
+            });
         });
     </script>
 

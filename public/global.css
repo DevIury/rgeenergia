@@ -36,10 +36,10 @@ img { max-width: 100%; display: block; }
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 12px 0; transition: background .3s, padding .3s, box-shadow .3s; }
 .nav.scrolled { background: rgba(0,0,0,.95); backdrop-filter: blur(16px); padding: 8px 0; box-shadow: 0 2px 20px rgba(0,0,0,.5); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; }
-.logo { display: flex; align-items: center; gap: 8px; }
-.logo-mark { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; background: var(--green); border-radius: 8px; color: var(--black); font-size: .85rem; }
-.logo-text { font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--white); }
-.logo-text span { color: var(--green); }
+.logo { display: flex; align-items: center; }
+.logo-img { height: 40px; width: auto; }
+.logo-mark { display: none; }
+.logo-text { display: none; }
 .nav-cta { display: none; }
 
 .nav-links {
