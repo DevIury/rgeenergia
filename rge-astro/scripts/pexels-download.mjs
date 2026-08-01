@@ -8,52 +8,52 @@ const API_KEY = process.env.PEXELS_API_KEY || 'pdOtAIRjuTrHavpI1JdpZTJS8ZPU9eOXv
 
 const IMAGES = [
   {
-    name: 'hero-bg',
-    query: 'solar panel field panorama',
-    orientation: 'landscape',
-    size: { width: 1920 },
-    perPage: 10,
-    alt: 'Background hero energia solar'
-  },
-  {
-    name: 'solar-panels',
-    query: 'painel solar telhado residencia',
-    orientation: 'landscape',
-    size: { width: 1200 },
-    perPage: 10,
-    alt: 'Painéis solares residenciais'
-  },
-  {
-    name: 'energy-pylons',
-    query: 'subestacao eletrica torre energia',
-    orientation: 'landscape',
-    size: { width: 1200 },
-    perPage: 10,
-    alt: 'Subestação de energia'
-  },
-  {
-    name: 'proj-urbano',
-    query: 'instalacao painel solar casa',
+    name: 'serv-consultoria',
+    query: 'engineering consultant planning solar project',
     orientation: 'landscape',
     size: { width: 800 },
     perPage: 10,
-    alt: 'Projeto residencial solar'
+    alt: 'Consultoria em energia'
   },
   {
-    name: 'proj-comercial',
-    query: 'predio comercial moderno',
+    name: 'serv-eficiencia',
+    query: 'energy efficiency electricity meter smart',
     orientation: 'landscape',
     size: { width: 800 },
     perPage: 10,
-    alt: 'Projeto comercial solar'
+    alt: 'Eficiência energética'
   },
   {
-    name: 'proj-rural',
-    query: 'fazenda rural campo agricultura',
+    name: 'serv-energia-solar',
+    query: 'solar panel rooftop house installation',
     orientation: 'landscape',
     size: { width: 800 },
     perPage: 10,
-    alt: 'Projeto rural solar'
+    alt: 'Energia solar fotovoltaica'
+  },
+  {
+    name: 'serv-geradores',
+    query: 'diesel generator power backup industrial',
+    orientation: 'landscape',
+    size: { width: 800 },
+    perPage: 10,
+    alt: 'Grupos geradores'
+  },
+  {
+    name: 'serv-projetos',
+    query: 'electrical engineering blueprint circuit',
+    orientation: 'landscape',
+    size: { width: 800 },
+    perPage: 10,
+    alt: 'Projetos elétricos'
+  },
+  {
+    name: 'serv-subestacoes',
+    query: 'electrical substation high voltage transformer',
+    orientation: 'landscape',
+    size: { width: 800 },
+    perPage: 10,
+    alt: 'Subestações'
   }
 ];
 
