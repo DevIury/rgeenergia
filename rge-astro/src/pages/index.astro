@@ -694,13 +694,25 @@ import Base from '../layouts/Base.astro';
         /* PROJETOS */
         .projetos { padding: 60px 0; background: var(--black); }
         .projetos-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-        .proj-card { position: relative; border-radius: var(--radius); overflow: hidden; }
-        .proj-card img { width: 100%; height: 200px; object-fit: cover; }
-        .proj-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px; background: linear-gradient(transparent, rgba(0,0,0,.9)); }
-        .proj-type { display: inline-block; padding: 3px 8px; background: var(--green); color: var(--black); font-size: .55rem; font-weight: 700; border-radius: var(--radius-full); margin-bottom: 6px; }
-        .proj-overlay h4 { color: var(--white); font-size: .95rem; }
-        .proj-econ { color: var(--green); font-weight: 700; font-size: .85rem; }
+        .proj-card { position: relative; border-radius: var(--radius); overflow: hidden; cursor: pointer; transition: all .4s cubic-bezier(.4,0,.2,1); }
+        .proj-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,.4), 0 0 20px rgba(34,197,94,.15); }
+        .proj-card img { width: 100%; height: 200px; object-fit: cover; transition: all .5s cubic-bezier(.4,0,.2,1); }
+        .proj-card:hover img { transform: scale(1.08); filter: brightness(1.1); }
+        .proj-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 16px; background: linear-gradient(transparent, rgba(0,0,0,.9)); transition: all .4s ease; }
+        .proj-card:hover .proj-overlay { padding-bottom: 20px; }
+        .proj-type { display: inline-block; padding: 3px 8px; background: var(--green); color: var(--black); font-size: .55rem; font-weight: 700; border-radius: var(--radius-full); margin-bottom: 6px; transition: all .3s ease; }
+        .proj-card:hover .proj-type { box-shadow: 0 0 12px rgba(34,197,94,.5); }
+        .proj-overlay h4 { color: var(--white); font-size: .95rem; transition: color .3s ease; }
+        .proj-card:hover .proj-overlay h4 { color: var(--green); }
+        .proj-econ { color: var(--green); font-weight: 700; font-size: .85rem; transition: all .3s ease; }
+        .proj-card:hover .proj-econ { text-shadow: 0 0 8px rgba(34,197,94,.5); }
         .projetos-cta { text-align: center; margin-top: 24px; }
+
+        @keyframes projSlideUp { from { opacity: 0; transform: translateY(40px) scale(.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        .proj-card.reveal { animation: projSlideUp .6s cubic-bezier(.4,0,.2,1) forwards; }
+        .proj-card.reveal:nth-child(1) { animation-delay: 0s; }
+        .proj-card.reveal:nth-child(2) { animation-delay: .15s; }
+        .proj-card.reveal:nth-child(3) { animation-delay: .3s; }
 
         /* DEPOIMENTOS */
         .depoimentos { padding: 60px 0; background: var(--dark); }
