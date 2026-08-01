@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rgeenergia.com.br/sitemap.xml

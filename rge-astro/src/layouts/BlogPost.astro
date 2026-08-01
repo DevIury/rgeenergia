@@ -1,0 +1,197 @@
+---
+import Base from './Base.astro';
+interface Props {
+    title: string;
+    description: string;
+    image: string;
+    imageAlt: string;
+    category: string;
+    date: string;
+    readTime: string;
+}
+const { title, description, image, imageAlt, category, date, readTime } = Astro.props;
+---
+
+<Base title={title} description={description} ogImage={image}>
+
+    <section class="bp-hero">
+        <div class="bp-hero-content container">
+            <nav class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a><span>/</span><span>{category}</span></nav>
+            <span class="bp-cat">{category}</span>
+            <h1><slot name="title" /></h1>
+            <div class="bp-meta">
+                <span><i class="fas fa-calendar-alt"></i> {date}</span>
+                <span class="bp-meta-sep"></span>
+                <span><i class="fas fa-user-circle"></i> RGE Energia</span>
+                <span class="bp-meta-sep"></span>
+                <span><i class="fas fa-clock"></i> {readTime}</span>
+            </div>
+        </div>
+    </section>
+
+    <article class="bp-article">
+        <div class="container bp-article-grid">
+            <div class="bp-content">
+                <slot />
+                <div class="bp-share">
+                    <span class="bp-share-label"><i class="fas fa-share-alt"></i> Compartilhar:</span>
+                    <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://rgeenergia.com.br' + Astro.url.pathname)}`} target="_blank" rel="noopener" class="bp-share-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href={`https://wa.me/?text=${encodeURIComponent(title + ' ' + 'https://rgeenergia.com.br' + Astro.url.pathname)}`} target="_blank" rel="noopener" class="bp-share-btn bp-share-wa" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://rgeenergia.com.br' + Astro.url.pathname)}`} target="_blank" rel="noopener" class="bp-share-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="bp-author">
+                    <div class="bp-author-avatar">
+                        <img src="/img/logo.svg" alt="RGE Energia">
+                    </div>
+                    <div class="bp-author-info">
+                        <h4>RGE Energia</h4>
+                        <p>Especialistas em energia solar fotovoltaica em Curvelo/MG. Mais de 10 anos de experiência em projetos residenciais, comerciais e rurais.</p>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="bp-sidebar">
+                <div class="bp-sidebar-card bp-sidebar-featured">
+                    <h3><i class="fas fa-fire"></i> Artigos Relacionados</h3>
+                    <a href="/blog/como-funciona-energia-solar" class="bp-sidebar-link">
+                        <span class="bp-sidebar-num">01</span>
+                        <span>Como Funciona a Energia Solar</span>
+                    </a>
+                    <a href="/blog/economia-conta-luz" class="bp-sidebar-link">
+                        <span class="bp-sidebar-num">02</span>
+                        <span>10 Dicas para Economizar na Conta de Luz</span>
+                    </a>
+                    <a href="/blog/retorno-investimento-solar" class="bp-sidebar-link">
+                        <span class="bp-sidebar-num">03</span>
+                        <span>Quanto Tempo para o Sistema se Pagar?</span>
+                    </a>
+                    <a href="/blog/beneficios-energia-solar" class="bp-sidebar-link">
+                        <span class="bp-sidebar-num">04</span>
+                        <span>7 Benefícios de Ter Energia Solar</span>
+                    </a>
+                </div>
+                <div class="bp-sidebar-card bp-sidebar-cta">
+                    <div class="bp-sidebar-cta-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>Quer economizar com energia solar?</h3>
+                    <p>Fale com nossa equipe e descubra o melhor sistema para você.</p>
+                    <a href="/contato" class="btn btn-green btn-block">FALE CONOSCO</a>
+                    <a href="https://wa.me/5538999901309" class="btn btn-outline-green btn-block" target="_blank"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
+                </div>
+            </aside>
+        </div>
+    </article>
+
+    <section class="bp-more">
+        <div class="container">
+            <h2 class="bp-more-title">Leia Também</h2>
+            <div class="bp-more-grid">
+                <a href="/blog/como-funciona-energia-solar" class="bp-more-card">
+                    <div class="bp-more-img"><img src="/img/solar-panels.webp" alt="Energia Solar" loading="lazy" decoding="async"></div>
+                    <span class="bp-more-cat">EDUCAÇÃO</span>
+                    <h3>Como Funciona a Energia Solar</h3>
+                </a>
+                <a href="/blog/economia-conta-luz" class="bp-more-card">
+                    <div class="bp-more-img"><img src="/img/proj-urbano.webp" alt="Economia conta de luz" loading="lazy" decoding="async"></div>
+                    <span class="bp-more-cat">ECONOMIA</span>
+                    <h3>10 Dicas para Economizar na Conta de Luz</h3>
+                </a>
+                <a href="/blog/retorno-investimento-solar" class="bp-more-card">
+                    <div class="bp-more-img"><img src="/img/proj-comercial.webp" alt="Retorno investimento" loading="lazy" decoding="async"></div>
+                    <span class="bp-more-cat">INVESTIMENTO</span>
+                    <h3>Quanto Tempo para o Sistema se Pagar?</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .bp-hero { position: relative; padding: 100px 0 50px; overflow: hidden; min-height: 340px; display: flex; align-items: flex-end; background: linear-gradient(135deg, var(--dark) 0%, var(--black) 50%, rgba(34,197,94,.06) 100%); }
+        .bp-hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(34,197,94,.1) 0%, transparent 70%); pointer-events: none; }
+        .bp-hero::after { content: ''; position: absolute; bottom: -60px; left: -60px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(34,197,94,.06) 0%, transparent 70%); pointer-events: none; }
+        .bp-hero-content { position: relative; z-index: 1; padding-bottom: 20px; }
+        .breadcrumb { display: flex; align-items: center; gap: 6px; font-size: .75rem; color: var(--gray); margin-bottom: 16px; flex-wrap: wrap; }
+        .breadcrumb a { color: var(--green); text-decoration: none; transition: .2s; }
+        .breadcrumb a:hover { color: var(--white); }
+        .bp-cat { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: rgba(34,197,94,.12); border: 1px solid rgba(34,197,94,.25); color: var(--green); font-size: .65rem; font-weight: 700; border-radius: var(--radius-full); margin-bottom: 16px; letter-spacing: 1px; text-transform: uppercase; }
+        .bp-cat::before { content: ''; width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: bp-pulse 2s infinite; }
+        @keyframes bp-pulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
+        .bp-hero h1 { font-family: var(--font-display); font-size: clamp(1.5rem, 5vw, 2.5rem); color: var(--white); margin-bottom: 16px; line-height: 1.2; max-width: 700px; }
+        .bp-hero h1 :global(span) { color: var(--green); }
+        .bp-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .bp-meta span { font-size: .75rem; color: var(--gray); display: inline-flex; align-items: center; gap: 6px; }
+        .bp-meta i { color: var(--green); font-size: .8rem; }
+        .bp-meta-sep { width: 4px; height: 4px; background: var(--dark-3); border-radius: 50%; margin: 0 2px; }
+
+        .bp-article { padding: 40px 0 60px; background: var(--black); }
+        .bp-article-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+
+        .bp-content :global(h2) { font-family: var(--font-display); font-size: 1.3rem; color: var(--white); margin: 36px 0 14px; padding-bottom: 10px; border-bottom: 1px solid var(--dark-3); }
+        .bp-content :global(h2:first-child) { margin-top: 0; border-bottom: none; padding-bottom: 0; }
+        .bp-content :global(h3) { font-size: 1.05rem; color: var(--green); margin: 20px 0 8px; font-weight: 600; }
+        .bp-content :global(p) { color: var(--gray); line-height: 1.8; margin-bottom: 16px; font-size: .95rem; }
+        .bp-content :global(p strong) { color: var(--white); font-weight: 600; }
+        .bp-content :global(ul) { list-style: none; margin: 8px 0 20px; padding: 16px 20px; background: var(--dark-2); border-radius: var(--radius); border-left: 3px solid var(--green); }
+        .bp-content :global(li) { position: relative; padding-left: 28px; color: var(--gray-light); font-size: .9rem; line-height: 2; }
+        .bp-content :global(li::before) { content: ''; position: absolute; left: 0; top: 12px; width: 14px; height: 14px; background: rgba(34,197,94,.12); border: 1.5px solid var(--green); border-radius: 4px; }
+        .bp-content :global(li::after) { content: '✓'; position: absolute; left: 2.5px; top: 10.5px; font-size: .6rem; color: var(--green); font-weight: 700; }
+        .bp-content :global(li strong) { color: var(--white); }
+        .bp-content :global(blockquote) { margin: 24px 0; padding: 20px 24px; background: linear-gradient(135deg, rgba(34,197,94,.06), rgba(34,197,94,.02)); border-left: 4px solid var(--green); border-radius: 0 var(--radius) var(--radius) 0; }
+        .bp-content :global(blockquote p) { color: var(--gray-light); font-style: italic; margin: 0; }
+
+        .bp-cta { background: linear-gradient(135deg, var(--dark-2), var(--dark)); border: 1px solid rgba(34,197,94,.3); border-radius: var(--radius); padding: 32px 24px; margin-top: 40px; text-align: center; position: relative; overflow: hidden; }
+        .bp-cta::before { content: ''; position: absolute; top: -50%; right: -30%; width: 200px; height: 200px; background: radial-gradient(circle, rgba(34,197,94,.1), transparent 70%); pointer-events: none; }
+        .bp-cta h3 { color: var(--white); font-size: 1.2rem; margin-bottom: 8px; position: relative; }
+        .bp-cta p { color: var(--gray); font-size: .9rem; margin-bottom: 18px; position: relative; }
+
+        .bp-share { display: flex; align-items: center; gap: 10px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--dark-3); }
+        .bp-share-label { font-size: .8rem; color: var(--gray); font-weight: 600; display: inline-flex; align-items: center; gap: 6px; }
+        .bp-share-btn { width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; background: var(--dark-2); border: 1px solid var(--dark-3); border-radius: 10px; color: var(--gray); font-size: .85rem; transition: .3s; }
+        .bp-share-btn:hover { background: var(--green); color: var(--black); border-color: var(--green); transform: translateY(-2px); }
+        .bp-share-wa:hover { background: #25d366; border-color: #25d366; }
+
+        .bp-author { display: flex; gap: 16px; align-items: flex-start; margin-top: 40px; padding: 24px; background: var(--dark-2); border: 1px solid var(--dark-3); border-radius: var(--radius); }
+        .bp-author-avatar { width: 56px; height: 56px; flex-shrink: 0; background: var(--dark-3); border-radius: 14px; display: flex; align-items: center; justify-content: center; padding: 10px; border: 1px solid rgba(34,197,94,.2); }
+        .bp-author-avatar img { width: 100%; height: 100%; }
+        .bp-author-info h4 { color: var(--white); font-size: .95rem; margin-bottom: 4px; }
+        .bp-author-info p { color: var(--gray); font-size: .8rem; line-height: 1.6; margin: 0; }
+
+        .bp-sidebar { position: sticky; top: 90px; align-self: start; }
+        .bp-sidebar-card { background: var(--dark-2); border: 1px solid var(--dark-3); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; }
+        .bp-sidebar-card h3 { color: var(--white); font-size: .9rem; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+        .bp-sidebar-card h3 i { color: var(--green); font-size: .8rem; }
+        .bp-sidebar-link { display: flex; align-items: center; gap: 12px; padding: 10px 0; color: var(--gray-light); font-size: .8rem; text-decoration: none; border-bottom: 1px solid var(--dark-3); transition: .2s; }
+        .bp-sidebar-link:last-child { border-bottom: none; }
+        .bp-sidebar-link:hover { color: var(--green); padding-left: 4px; }
+        .bp-sidebar-num { font-family: var(--font-display); font-size: .7rem; color: var(--green); font-weight: 700; background: rgba(34,197,94,.1); width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; border-radius: 8px; flex-shrink: 0; }
+        .bp-sidebar-cta { background: linear-gradient(180deg, var(--dark-2), rgba(34,197,94,.05)); border-color: rgba(34,197,94,.2); text-align: center; }
+        .bp-sidebar-cta-icon { width: 48px; height: 48px; background: rgba(34,197,94,.12); border: 1px solid rgba(34,197,94,.25); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: 1.2rem; color: var(--green); }
+        .bp-sidebar-cta h3 { justify-content: center; }
+        .bp-sidebar-cta p { color: var(--gray); font-size: .8rem; margin-bottom: 14px; line-height: 1.5; }
+        .bp-sidebar-cta .btn { margin-bottom: 8px; }
+        .bp-sidebar-cta .btn:last-child { margin-bottom: 0; }
+        .btn-block { display: block; width: 100%; text-align: center; }
+
+        .bp-more { padding: 60px 0 80px; background: var(--black); }
+        .bp-more-title { font-family: var(--font-display); font-size: 1.4rem; color: var(--white); text-align: center; margin-bottom: 32px; }
+        .bp-more-title::after { content: ''; display: block; width: 40px; height: 3px; background: var(--green); border-radius: 2px; margin: 10px auto 0; }
+        .bp-more-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+        .bp-more-card { display: block; background: var(--dark-2); border: 1px solid var(--dark-3); border-radius: var(--radius); overflow: hidden; transition: .3s; }
+        .bp-more-card:hover { border-color: var(--green); transform: translateY(-4px); box-shadow: 0 8px 30px rgba(34,197,94,.1); }
+        .bp-more-img { height: 160px; overflow: hidden; }
+        .bp-more-img img { width: 100%; height: 100%; object-fit: cover; transition: .5s; }
+        .bp-more-card:hover .bp-more-img img { transform: scale(1.05); }
+        .bp-more-cat { display: inline-block; padding: 4px 10px; margin: 12px 14px 6px; background: rgba(34,197,94,.1); color: var(--green); font-size: .6rem; font-weight: 700; border-radius: var(--radius-full); letter-spacing: .5px; }
+        .bp-more-card h3 { color: var(--white); font-size: .9rem; padding: 0 14px 14px; line-height: 1.4; }
+
+        @media(min-width:640px) {
+            .bp-hero { min-height: 380px; }
+            .bp-more-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media(min-width:1024px) {
+            .bp-hero { padding: 140px 0 60px; min-height: 420px; }
+            .bp-article-grid { grid-template-columns: 1fr 320px; gap: 48px; }
+            .bp-more-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+
+</Base>
