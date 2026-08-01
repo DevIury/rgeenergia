@@ -1,0 +1,6 @@
+{
+  "name": "rgeenergia",
+  "scripts": {
+    "build": "cd rge-astro && npm install && npm run build"
+  }
+}
